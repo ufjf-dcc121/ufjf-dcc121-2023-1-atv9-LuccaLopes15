@@ -24,6 +24,8 @@
             <input type="reset" placeholder="Redefinir">
         </form>
         <p></p>
+        <h2>Visitas passadas:</h2>
+        <ol></ol>
     </main>
     <script>
         const form = document.querySelector("form");
@@ -42,7 +44,37 @@
             
             form.reset();
             form.nome.focus();
+            
+            addPessoa(nome, sobrenome, idade)
+            
         }
+
+        function addPessoa(nome, sobrenome, idade){
+                const li = document.createElement('li');
+                const divPessoa = document.createElement('div');
+                divPessoa.classList.add("pessoa");
+
+                const spanNome = document.createElement('span');
+                spanNome.classList.add("nome");
+                spanNome.textContent = nome;
+                divPessoa.appendChild(spanNome);
+
+                const spanSobrenome = document.createElement('span');
+                spanSobrenome.classList.add("sobrenome");
+                spanSobrenome.textContent = sobrenome;
+                divPessoa.appendChild(spanSobrenome);
+
+                const spanIdade = document.createElement('span');
+                spanIdade.classList.add("idade");
+                spanIdade.textContent = idade;
+                divPessoa.appendChild(spanIdade);
+
+
+                li.appendChild(divPessoa);
+                console.log(li);
+                const lista = document.querySelector("ol")
+                lista.appendChild(li);
+            }
     </script>
 </body>
 </html>
