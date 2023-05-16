@@ -21,7 +21,7 @@
             <input type="text" name="sobrenome" placeholder="Sobrenome"/>
             <input type="number" name="idade" placeholder="Idade"/>
             <input type="submit" placeholder="Enviar">
-            <input type="reset" placeholder="Resetar">
+            <input type="reset" placeholder="Redefinir">
         </form>
         <p></p>
     </main>
@@ -40,6 +40,8 @@
             const menssagem = document.querySelector("p");
             menssagem.innerHTML = `Olá <span>${nome} ${sobrenome}<span/> !`;
             
+            form.reset();
+            form.nome.focus();
         }
     </script>
 </body>
